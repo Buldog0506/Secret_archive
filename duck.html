@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NODE 08</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #07100e;
+      --panel: #0c211d;
+      --text: #e7fff8;
+      --muted: #88b8ad;
+      --accent: #ffd15c;
+      --water: #62d6c8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 58%, rgba(98, 214, 200, 0.15), transparent 34%),
+        linear-gradient(145deg, #07100e 0%, #102822 52%, #050807 100%);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .node {
+      width: min(92vw, 760px);
+      padding: clamp(18px, 4vw, 36px);
+      text-align: center;
+    }
+
+    .label {
+      margin: 0 0 clamp(18px, 4vw, 32px);
+      color: var(--muted);
+      font-size: clamp(14px, 2vw, 18px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .duck-stage {
+      display: grid;
+      place-items: center;
+      min-height: min(68vh, 620px);
+    }
+
+    .download-link {
+      display: inline-grid;
+      place-items: center;
+      width: min(78vw, 520px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      transition: transform 160ms ease, filter 160ms ease;
+    }
+
+    .download-link:hover,
+    .download-link:focus-visible {
+      transform: translateY(-4px) scale(1.02);
+      filter: drop-shadow(0 0 28px rgba(255, 209, 92, 0.38));
+    }
+
+    .download-link:focus-visible {
+      box-shadow: 0 0 0 3px var(--water);
+    }
+
+    .duck-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      image-rendering: auto;
+      user-select: none;
+    }
+
+    .status {
+      margin: clamp(14px, 3vw, 24px) 0 0;
+      color: var(--accent);
+      font-size: clamp(15px, 2vw, 20px);
+    }
+
+    @media (max-width: 520px) {
+      .node {
+        padding: 18px;
+      }
+
+      .download-link {
+        width: min(86vw, 430px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="node" aria-label="Узел с архивом">
+    <p class="label">NODE 08 / ANATIS</p>
+    <section class="duck-stage">
+      <a
+        class="download-link"
+        href="https://disk.yandex.ru/d/G48HexS4VmqZGQ"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Скачать архив"
+      >
+        <img class="duck-image" src="assets/duck.png" alt="Жёлтая утка">
+      </a>
+    </section>
+    <p class="status">ARCHIVE ATTACHED</p>
+  </main>
+</body>
+</html>
